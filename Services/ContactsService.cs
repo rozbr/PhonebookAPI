@@ -18,5 +18,13 @@ namespace PhonesbookAPI.Services {
     }
 
     public List<Contact> Get() => _contacts.Find(contact => true).ToList();
+
+    public Contact Get(string id) => _contacts.Find<Contact>(contact => contact.Id == id).FirstOrDefault();
+
+    public Contact Create(Contact contact) {
+      _contacts.InsertOne(contact);
+
+      return contact;
+    }
   }
 }
