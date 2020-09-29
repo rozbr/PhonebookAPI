@@ -26,5 +26,7 @@ namespace PhonesbookAPI.Services {
 
       return contact;
     }
+
+    public void Update(string id, Contact contact) => _contacts.ReplaceOne(contact => contact.Id == id, contact);
   }
 }

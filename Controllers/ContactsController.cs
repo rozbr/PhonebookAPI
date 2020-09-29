@@ -35,5 +35,18 @@ namespace PhonesbookAPI.Controllers {
 
       return CreatedAtRoute("GetContact", new { id = contact.Id.ToString() }, contact);
     }
+
+    [HttpPut("{id}")]
+    public ActionResult<Contact> Update(string id, Contact contact) {
+      var oldContact = _contactsService.Get(id);
+
+      if (oldContact == null)
+        return NotFound();
+
+      contact.Id = id;
+      _contactsService.Update(id, contact);
+
+      return Ok();
+    }
   }
 }
