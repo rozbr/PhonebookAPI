@@ -1,4 +1,6 @@
 
+using System.Collections.Generic;
+
 using MongoDB.Driver;
 
 using PhonesbookAPI.Models;
@@ -14,5 +16,7 @@ namespace PhonesbookAPI.Services {
 
       _contacts = database.GetCollection<Contact>("contacts");
     }
+
+    public List<Contact> Get() => _contacts.Find(contact => true).ToList();
   }
 }

@@ -17,6 +17,6 @@ namespace PhonesbookAPI.Controllers {
     }
 
     [HttpGet]
-    public ActionResult<List<Contact>> Get() => new List<Contact>();
+    public ActionResult<List<Contact>> Get() => _contactsService.Get();
   }
 }
