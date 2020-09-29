@@ -10,10 +10,10 @@ namespace PhonesbookAPI.Controllers {
   [Route("api/contacts")]
   [ApiController]
   public class ContactsController : ControllerBase {
-    private readonly ContactsService _contactService;
+    private readonly ContactsService _contactsService;
 
     public ContactsController(ContactsService service) {
-      _contactService = service;
+      _contactsService = service;
     }
 
     [HttpGet]

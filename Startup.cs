@@ -11,7 +11,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace PhonebookAPI
+using PhonesbookAPI.Services;
+
+
+namespace PhonesbookAPI
 {
     public class Startup
     {
@@ -25,6 +28,8 @@ namespace PhonebookAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<ContactsService>();
+
             services.AddControllers();
         }
 
