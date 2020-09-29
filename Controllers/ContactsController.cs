@@ -48,5 +48,17 @@ namespace PhonesbookAPI.Controllers {
 
       return Ok();
     }
+
+    [HttpDelete("{id}")]
+    public ActionResult Delete(string id) {
+      var contact = _contactsService.Get(id);
+
+      if (contact == null)
+        return NotFound();
+
+      _contactsService.Delete(id);
+
+      return Ok();
+    }
   }
 }
