@@ -30,6 +30,12 @@ namespace PhonesbookAPI
         {
             services.AddSingleton<ContactsService>();
 
+            services.AddCors(options => {
+                options.AddDefaultPolicy(builder => {
+                    builder.WithOrigins("http://localhost:3000");
+                });
+            });
+
             services.AddControllers();
         }
 
@@ -44,6 +50,8 @@ namespace PhonesbookAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
