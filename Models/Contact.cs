@@ -19,7 +19,7 @@ namespace PhonesbookAPI.Models {
     [BsonElement("emails")]
     public List<Dictionary<string, string>> Emails { get; set; }
 
-    [BsonElement("telefones")]
-    public List<Dictionary<string, string>> Telefones { get; set; }
+    [BsonElement("phones")]
+    public List<Dictionary<string, string>> Phones { get; set; }
   }
 }
